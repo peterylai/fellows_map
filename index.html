@@ -1,0 +1,31 @@
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script src="http://d3js.org/topojson.v1.min.js"></script>
+<script src="./datamaps.all.min.js"></script>
+<div id="container" style="position: relative; width: 500px; height: 300px;"></div>
+<script>
+    var map = new Datamap({
+        element: document.getElementById('container'),
+        scope: 'usa',
+        fills: {
+            0: '#020',
+            1: '#040',
+            2: '#080',
+            3: '#0c0',
+            4: '#0f0',
+            defaultFill: '000'
+        },
+        geographyConfig: {
+          highlightFillColor: '#ddd',
+          highlightBorderWidth: 0,
+          popupTemplate: function(geo, data) {
+              return ['<div class="hoverinfo"><strong>',
+                      'Fellows from ' + geo.properties.name,
+                      ': ' + data.fellows,
+                      '</strong></div>'].join('');
+          }
+        },
+        data: {
+          AE: {fillKey: 2, fellows: 2}, AK: {fillKey: 2, fellows: 2}, AL: {fillKey: 0, fellows: 0}, AZ: {fillKey: 4, fellows: 4}, AR: {fillKey: 1, fellows: 1}, CA: {fillKey: 2, fellows: 2}, CO: {fillKey: 3, fellows: 3}, CT: {fillKey: 2, fellows: 2}, DE: {fillKey: 2, fellows: 2}, FL: {fillKey: 2, fellows: 2}, GA: {fillKey: 1, fellows: 1}, HI: {fillKey: 2, fellows: 2}, ID: {fillKey: 0, fellows: 0}, IL: {fillKey: 4, fellows: 4}, IN: {fillKey: 4, fellows: 4}, IA: {fillKey: 2, fellows: 2}, KS: {fillKey: 3, fellows: 3}, KY: {fillKey: 3, fellows: 3}, LA: {fillKey: 3, fellows: 3}, ME: {fillKey: 2, fellows: 2}, MD: {fillKey: 1, fellows: 1}, MA: {fillKey: 4, fellows: 4}, MI: {fillKey: 4, fellows: 4}, MN: {fillKey: 4, fellows: 4}, MO: {fillKey: 3, fellows: 3}, MS: {fillKey: 0, fellows: 0}, MT: {fillKey: 2, fellows: 2}, NE: {fillKey: 2, fellows: 2}, NV: {fillKey: 3, fellows: 3}, NH: {fillKey: 0, fellows: 0}, NJ: {fillKey: 3, fellows: 3}, NM: {fillKey: 3, fellows: 3}, NY: {fillKey: 4, fellows: 4}, ND: {fillKey: 4, fellows: 4}, NC: {fillKey: 4, fellows: 4}, OH: {fillKey: 0, fellows: 0}, OK: {fillKey: 3, fellows: 3}, OR: {fillKey: 2, fellows: 2}, PA: {fillKey: 3, fellows: 3}, RI: {fillKey: 0, fellows: 0}, SC: {fillKey: 2, fellows: 2}, SD: {fillKey: 4, fellows: 4}, TN: {fillKey: 4, fellows: 4}, TX: {fillKey: 4, fellows: 4}, UT: {fillKey: 4, fellows: 4}, VT: {fillKey: 4, fellows: 4}, VA: {fillKey: 4, fellows: 4}, WA: {fillKey: 3, fellows: 3}, WV: {fillKey: 0, fellows: 0}, WI: {fillKey: 3, fellows: 3}, WY: {fillKey: 4, fellows: 4}
+        }
+    });
+</script>
