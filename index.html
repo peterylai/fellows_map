@@ -7,15 +7,16 @@
         element: document.getElementById('container'),
         scope: 'usa',
         fills: {
-            0: '#020',
-            1: '#040',
-            2: '#080',
-            3: '#0c0',
-            4: '#0f0',
-            defaultFill: '000'
+            0: '#edf8fb',
+            1: '#b2e2e2',
+            2: '#66c2a4',
+            3: '#2ca25f',
+            4: '#006d2c',
+            defaultFill: '#fff'
         },
         geographyConfig: {
-          highlightFillColor: '#ddd',
+          borderColor: '#333',
+          highlightFillColor: '#333',
           highlightBorderWidth: 0,
           popupTemplate: function(geo, data) {
               return ['<div class="hoverinfo"><strong>',
